@@ -7,5 +7,5 @@ export default function IndexPage(props) {
       <Links path="test"/>
       <Links />      
     </>
-  )
+  );
 }
