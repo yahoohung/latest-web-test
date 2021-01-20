@@ -2,11 +2,7 @@ import 'reset-css-complete/reset.css';
 import { createGlobalStyle } from 'styled-components';
 import AppContainer from '@/components/Context/container';
 
-import { defaults } from 'react-sweet-state';
 
-if (typeof window !== 'undefined') {
-  defaults.devtools = true;
-}
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -24,8 +20,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function MyApp({ Component, pageProps }) {
-  return <AppContainer>
+  return <>
     <GlobalStyle />  
-    <Component {...pageProps} />
-  </AppContainer>
+    <AppContainer>
+      <Component {...pageProps} />
+    </AppContainer>
+  </>
 }

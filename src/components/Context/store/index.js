@@ -4,7 +4,7 @@ import initialState from './initialState';
 const Store = createStore({
   initialState,
   actions: {},
-  name: 'appStore',
+  // name: 'appStore',
 });
 
 export default Store;
