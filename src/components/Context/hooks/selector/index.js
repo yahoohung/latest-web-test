@@ -5,6 +5,12 @@ const getZero = createSelector(
   count => count % 10 === 0,
 );
 
+const getCount = createSelector(
+  state => state.count,
+  count => count,
+);
+
 export {
   getZero,
+  getCount,
 };

@@ -1,8 +1,8 @@
 import React from 'react';
-import { useAppStore } from '@/components/Context/hooks';
+import { useCountValue } from '@/components/Context/hooks';
 
 const DisplayCount = () => {
-  const [{ count }] = useAppStore();
+  const [count] = useCountValue();
   return <h1>{count}</h1>;
 };
 
