@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
+import React from 'react';
+import PropTypes from 'prop-types';
 import 'reset-css-complete/reset.css';
 import { createGlobalStyle } from 'styled-components';
 import AppContainer from '@/components/Context/container';
-
-
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -20,10 +21,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function MyApp({ Component, pageProps }) {
-  return <>
-    <GlobalStyle />  
+  return (
     <AppContainer>
+      <GlobalStyle />
       <Component {...pageProps} />
     </AppContainer>
-  </>
+  );
 }
