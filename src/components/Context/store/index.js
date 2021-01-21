@@ -1,12 +1,20 @@
-import { createStore } from 'react-sweet-state';
+import { createStore, defaults } from 'react-sweet-state';
+import { produce } from 'immer';
 import initialState from './initialState';
+
+defaults.mutator = (currentState, producer) => produce(currentState, producer);
 
 const Store = createStore({
   initialState,
   actions: {
-    add: () => ({ setState, getState }) => {
-      setState({
-        count: getState().count + 1,
+    add: (n = 1) => ({ setState }) => {
+      setState(({ test }) => {
+        test.a += n;
+      });
+    },
+    increment: (n = 2) => ({ setState }) => {
+      setState(draft => {
+        draft.count += n;
       });
     },
   },
