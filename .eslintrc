@@ -1,0 +1,58 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "localStorage": true,
+    "window": true,
+    "document": true,
+    "test": true,
+    "expect": true,
+    "google": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-perf",
+    "better-styled-components",
+    "react-hooks"
+  ],
+  "rules": {
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "hrefLeft",
+          "hrefRight"
+        ],
+        "aspects": [
+          "invalidHref",
+          "preferButton"
+        ]
+      }
+    ],
+    "linebreak-style": "off",
+    "max-len": "off",
+    "no-nested-ternary": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-props-no-spreading": "off"
+  }
+}
