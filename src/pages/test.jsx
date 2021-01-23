@@ -1,4 +1,15 @@
 import Links from '@/components/Links'
+import {useNetwork} from 'react-use';
+
+const Demo = () => {
+  const state = useNetwork();
+
+  return (
+    <pre>
+      {JSON.stringify(state, null, 2)}
+    </pre>
+  );
+};
 
 export default function TestPage(props) {
   return (
@@ -7,6 +18,8 @@ export default function TestPage(props) {
       <Links path="test" />
 
       <Links />
+
+      <Demo />
     </>
   )
 }
