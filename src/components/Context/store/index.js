@@ -12,7 +12,7 @@ const Store = createStore({
         test.a += n;
       });
     },
-    increment: (n = 2) => ({ setState }) => {
+    increment: (n = 1) => ({ setState }) => {
       setState(draft => {
         draft.count += n;
       });
