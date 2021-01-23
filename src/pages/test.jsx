@@ -1,5 +1,5 @@
 import Links from '@/components/Links'
-import {useNetwork} from 'react-use';
+import {useNetwork, useIdle} from 'react-use';
 
 const Demo = () => {
   const state = useNetwork();
@@ -11,6 +11,16 @@ const Demo = () => {
   );
 };
 
+const Idle = () => {
+  const isIdle = useIdle(3e3);
+
+  return (
+    <div>
+      <div>User is idle: {isIdle ? 'Yes 😴' : 'Nope'}</div>
+    </div>
+  );
+};
+
 export default function TestPage(props) {
   return (
     <>
@@ -18,6 +28,8 @@ export default function TestPage(props) {
       <Links path="test" />
 
       <Links />
+
+      <Idle />
 
       <Demo />
     </>
